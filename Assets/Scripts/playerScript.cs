@@ -26,6 +26,8 @@ public class playerScript : MonoBehaviour
     public GameObject h3;
     public bool gameIsOver;
 
+    public GameObject gameWinScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -121,6 +123,45 @@ public class playerScript : MonoBehaviour
         if (collision.gameObject.tag == "stomp")
         {
             transform.position += Vector3.up * +100 * Time.deltaTime;
+        }
+
+
+        if (collision.gameObject.tag == "winL1")
+        {
+            gameIsOver = true;
+            gameWinScene.SetActive(true);
+
+            if (0 == PlayerPrefs.GetInt("levelsWon"))
+            {
+                PlayerPrefs.SetInt("LevelsWon", 1);
+            }
+        }
+
+        if (collision.gameObject.tag == "winL2")
+        {
+            gameIsOver = true;
+            gameWinScene.SetActive(true);
+
+            if (1 == PlayerPrefs.GetInt("levelsWon"))
+            {
+                PlayerPrefs.SetInt("LevelsWon", 2);
+            }
+        }
+
+        if (collision.gameObject.tag == "instantGameOver")
+        {
+            healthCount = 0;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "heart")
+        {
+            if (healthCount < 3)
+            {
+                healthCount++;
+            }
         }
     }
 }

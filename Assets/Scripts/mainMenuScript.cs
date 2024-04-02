@@ -18,7 +18,7 @@ public class mainMenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelWins = PlayerPrefs.GetInt("levelWon");
+        levelWins = PlayerPrefs.GetInt("levelsWon");
     }
 
     // Update is called once per frame
@@ -36,8 +36,8 @@ public class mainMenuScript : MonoBehaviour
         }
         if (levelWins == 2)
         {
-            L2Lock.SetActive(true);
-            L3Lock.SetActive(true);
+            L2Lock.SetActive(false);
+            L3Lock.SetActive(false);
         }
     }
 

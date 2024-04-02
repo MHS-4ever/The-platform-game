@@ -6,6 +6,9 @@ TagManager:
   tags:
   - enemy
   - stomp
+  - heart
+  - winL1
+  - instantGameOver
   layers:
   - Default
   - TransparentFX
