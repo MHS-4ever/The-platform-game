@@ -58,4 +58,10 @@ public class mainMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+
+    public void resetGame()
+    {
+        SceneManager.LoadScene(0);
+        PlayerPrefs.SetInt("levelsWon", 0);
+    }
 }

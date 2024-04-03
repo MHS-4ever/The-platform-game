@@ -133,7 +133,7 @@ public class playerScript : MonoBehaviour
 
             if (0 == PlayerPrefs.GetInt("levelsWon"))
             {
-                PlayerPrefs.SetInt("LevelsWon", 1);
+                PlayerPrefs.SetInt("levelsWon", 1);
             }
         }
 
@@ -144,7 +144,7 @@ public class playerScript : MonoBehaviour
 
             if (1 == PlayerPrefs.GetInt("levelsWon"))
             {
-                PlayerPrefs.SetInt("LevelsWon", 2);
+                PlayerPrefs.SetInt("levelsWon", 2);
             }
         }
 
@@ -152,13 +152,10 @@ public class playerScript : MonoBehaviour
         {
             healthCount = 0;
         }
-    }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
         if (collision.gameObject.tag == "heart")
         {
-            if (healthCount < 3)
+            if (healthCount <= 2)
             {
                 healthCount++;
             }
