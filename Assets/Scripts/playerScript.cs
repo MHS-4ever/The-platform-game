@@ -53,20 +53,19 @@ public class playerScript : MonoBehaviour
         {
             onTheGround = false;
         }
-        
-        if(Input.GetKey(KeyCode.D) && hurtAnim == false && gameIsOver == false)
+        if (Input.GetKey(KeyCode.RightArrow) && hurtAnim == false && gameIsOver == false)
         {
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
             running.Play("running");
             right = true;
         }
-        if (Input.GetKey(KeyCode.A) && hurtAnim == false && gameIsOver == false)
+        if (Input.GetKey(KeyCode.LeftArrow) && hurtAnim == false && gameIsOver == false)
         {
             transform.position += Vector3.right * -moveSpeed * Time.deltaTime;
             running.Play("running");
             right = false;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && onTheGround == true && gameIsOver == false)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && onTheGround == true && gameIsOver == false)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
         }
